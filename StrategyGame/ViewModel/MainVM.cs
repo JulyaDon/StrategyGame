@@ -5,18 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StrategyGame.Model;
+using StrategyGame.Model.Heroes;
 
 namespace StrategyGame.ViewModel
 {
-    class MainVM : INotifyPropertyChanged
+    class MainVM
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-       
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+       IHero archer = new Archer();
     }
 }

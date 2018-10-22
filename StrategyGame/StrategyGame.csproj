@@ -64,6 +64,7 @@
     <Compile Include="Model\Heroes\IHero.cs" />
     <Compile Include="Model\Heroes\Peasant.cs" />
     <Compile Include="Model\Heroes\Swordsman.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

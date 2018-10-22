@@ -4,17 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StrategyGame"
-        xmlns:viewModel="clr-namespace:StrategyGame.ViewModel"
+        xmlns:viewModel="clr-namespace:StrategyGame.Model.Heroes"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
-        <viewModel:MainVM/>
+        <viewModel:Archer/>
     </Window.DataContext>
-    <StackPanel>
-        <!--<Label Content="First number" HorizontalAlignment="Center"></Label>
-        <Label Content="First number" HorizontalAlignment="Center"></Label>-->
-        <TextBox Width="30" Text="{Binding Number1, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <TextBox Width="30" Text="{Binding Number2, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-        <TextBox Width="30" Text="{Binding Number3, Mode=OneWay}" IsReadOnly="True"></TextBox>
-    </StackPanel>
+    <Grid Width="400" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Hitpoints:" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="Minimal damage:" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="2" Grid.Column="0" Content="Maximal damage:" HorizontalAlignment="Center"></Label>
+        <Label Grid.Row="3" Grid.Column="0" Content="Speed:" HorizontalAlignment="Center"></Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Hitpoints, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="2" IsReadOnly="True"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="4" IsReadOnly="True"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="5" IsReadOnly="True"></TextBox>
+    </Grid>
 </Window>
