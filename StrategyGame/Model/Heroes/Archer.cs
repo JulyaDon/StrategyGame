@@ -4,35 +4,19 @@ using StrategyGame.Annotations;
 
 namespace StrategyGame.Model.Heroes
 {
-    public class Archer : IHero
+    public class Archer : AbstractHero
     {
-        private int _hitpoints;
-        public int Hitpoints
+        public Archer(string image, int x, int y)
         {
-            get { return _hitpoints;}
-            set
-            {
-                _hitpoints = value;
-                OnPropertyChanged(nameof(Hitpoints));
-            }
-        }
-
-        public int MinDamage { get; }
-
-        public int MaxDamage { get; }
-        public int Speed { get; }
-        public Archer()
-        {
-            _hitpoints = 15;
+            HitPoints = 15;
             MinDamage = 2;
             MaxDamage = 4;
             Speed = 5;
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged( string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.imageURL = image;
+            this.x = x;
+            this.y = y;
+            this.width = 32;
+            this.height = 32;
         }
     }
 }
