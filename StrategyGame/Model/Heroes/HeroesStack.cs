@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StrategyGame.Model.Heroes
 {
-    public class HeroesStack<T> where T : IHero
+    public class HeroesStack<T> where T : AbstractHero
     {
         private Stack<T> _heroesStack = new Stack<T>();
 
